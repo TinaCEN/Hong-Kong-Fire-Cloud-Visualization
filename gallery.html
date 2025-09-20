@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港火烧云数据可视化图集 | Hong Kong Sunset Clouds Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', 'Arial', 'SimHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #C1272D;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header h2 {
+            font-size: 1.5em;
+            color: #FF6B35;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #C1272D;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .gallery-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #FF6B35, #C1272D);
+            padding: 15px;
+            border-radius: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .image-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #FF6B35;
+        }
+        
+        .image-info {
+            padding: 20px;
+        }
+        
+        .image-title {
+            font-size: 1.3em;
+            color: #C1272D;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .image-description {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B35, #C1272D);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌅 香港火烧云数据可视化图集</h1>
+            <h2>Hong Kong Sunset Clouds Data Visualization Gallery</h2>
+            <p>基于香港天文台真实气象数据模式 | 2000-2020年观测分析</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">7,671</div>
+                <div class="stat-label">总观测天数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1,432</div>
+                <div class="stat-label">火烧云观测次数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">18.7%</div>
+                <div class="stat-label">观测成功率</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11月</div>
+                <div class="stat-label">最佳观测月份</div>
+            </div>
+        </div>
+        
+        <div class="interactive-section">
+            <h3>🔍 交互式数据仪表板</h3>
+            <p>点击下方按钮查看动态交互图表，支持缩放、悬停等功能</p>
+            <a href="interactive_dashboard.html" class="btn" target="_blank">
+                📊 打开交互式仪表板
+            </a>
+        </div>
+        
+        <div class="gallery-section">
+            <div class="section-title">📊 科学分析图表 Scientific Charts</div>
+            <div class="gallery-grid">
+                <div class="image-card">
+                    <img src="annual_heatmap.png" alt="年度强度热力图">
+                    <div class="image-info">
+                        <div class="image-title">🔥 年度强度热力图</div>
+                        <div class="image-description">
+                            展示2000-2020年各月份火烧云平均强度，使用日落色彩映射，
+                            清晰展现秋冬季（10-2月）为最佳观测期的季节性规律。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="circular_calendar.png" alt="圆形日历可视化">
+                    <div class="image-info">
+                        <div class="image-title">🌀 圆形日历可视化</div>
+                        <div class="image-description">
+                            以极坐标形式展现年度数据，每个点代表一天，
+                            颜色深度表示强度。选择2005、2010、2015、2020四个代表性年份。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="3d_landscape.png" alt="3D时间景观图">
+                    <div class="image-info">
+                        <div class="image-title">🏔️ 3D时间景观图</div>
+                        <div class="image-description">
+                            三维立体展示20年间的数据变化，X轴为年份，Y轴为月份，
+                            Z轴为强度，包含等高线投影便于理解数据分布。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-section">
+            <div class="section-title">🎨 创意艺术图表 Creative Art Charts</div>
+            <div class="gallery-grid">
+                <div class="image-card">
+                    <img src="sunset_mandala.png" alt="火烧云曼陀罗">
+                    <div class="image-info">
+                        <div class="image-title">🕉️ 火烧云曼陀罗</div>
+                        <div class="image-description">
+                            以2020年数据创建的曼陀罗艺术图案，五层同心圆设计，
+                            每层采用不同形状和颜色，结合极坐标系统与传统曼陀罗美学。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="flowing_river.png" alt="时间流动河流图">
+                    <div class="image-info">
+                        <div class="image-title">🌊 时间流动河流图</div>
+                        <div class="image-description">
+                            将每个月的数据表现为一条"河流"，河流宽度代表观测次数，
+                            颜色表示月份，创造流动感和时间连续性。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="constellation_map.png" alt="火烧云星座图">
+                    <div class="image-info">
+                        <div class="image-title">⭐ 火烧云星座图</div>
+                        <div class="image-description">
+                            以2015年数据创建的星座图案，每个火烧云观测成为一颗"星星"，
+                            星星之间用线条连接形成星座，包含光芒效果和同心圆导航。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="musical_score.png" alt="音乐乐谱图">
+                    <div class="image-info">
+                        <div class="image-title">🎵 音乐乐谱图</div>
+                        <div class="image-description">
+                            将2010年火烧云数据转化为音乐乐谱，强度映射为五线谱上的音高，
+                            不同强度用不同颜色和大小的音符表示。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img src="flower_bloom.png" alt="四季花朵绽放图">
+                    <div class="image-info">
+                        <div class="image-title">🌸 四季花朵绽放图</div>
+                        <div class="image-description">
+                            四个季节的花朵绽放对比图，每个季节数据形成一朵花的图案，
+                            花瓣大小和颜色表示观测强度，展现季节性差异。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><span class="emoji">🌅</span> 本项目将科学数据与艺术创意完美结合</p>
+            <p>为香港火烧云观测提供科学指导和美妙的视觉体验</p>
+            <p><span class="emoji">📊</span> 数据来源：基于香港天文台140多年历史气象模式</p>
+            <p><span class="emoji">🎨</span> 创意可视化 × 科学严谨性 = 数据艺术的完美融合</p>
+        </div>
+    </div>
+</body>
+</html>
